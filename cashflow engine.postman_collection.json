@@ -1,0 +1,384 @@
+{
+  "info": {
+    "_postman_id": "701606c1-01f2-418c-adb0-320030c1292a",
+    "name": "cashflow engine",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30809521",
+    "_collection_link": "https://go.postman.co/collection/30809521-701606c1-01f2-418c-adb0-320030c1292a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "store",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"My Project\",\r\n    \"description\": \"Optional description\",\r\n    \"revenue_model\": \"sale\",\r\n    \"project_period\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/projects",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects"
+              ]
+            },
+            "description": "Generated from cURL: curl -X POST \"{{url}}/projects\" -H \"Accept: application/json\" -H \"Content-Type: application/json\" -d '{\"name\":\"My Project\",\"description\":\"Optional description\",\"revenue_model\":\"sales\",\"project_period\":10}'"
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/projects/{{project}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET \"{{url}}/projects/{{project}}\" -H \"Accept: application/json\""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Scenario",
+      "item": [
+        {
+          "name": "update scenario",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"revenue_model\": \"hybrid\",\r\n    \"project_period\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/projects/{{project}}/scenario",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}",
+                "scenario"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PATCH \"{{url}}/projects/{{project}}/scenario\" -H \"Accept: application/json\" -H \"Content-Type: application/json\" -d '{\"revenue_model\": \"sales\", \"project_period\": 10}'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Inputs",
+      "item": [
+        {
+          "name": "construction",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"total_construction_cost\": 1000000,\r\n    \"total_other_capex\": 50000,\r\n    \"construction_start_period\": 1,\r\n    \"construction_duration\": 12,\r\n    \"scurve_weights\": [\r\n        {\r\n            \"construction_year\": 1,\r\n            \"raw_weight\": 0.4\r\n        },\r\n        {\r\n            \"construction_year\": 2,\r\n            \"raw_weight\": 0.6\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/projects/{{project}}/inputs/construction",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}",
+                "inputs",
+                "construction"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PATCH \"{{url}}/projects/{{project}}/inputs/construction\" -H \"Accept: application/json\" -H \"Content-Type: application/json\" -d '{\"total_construction_cost\":1000000,\"total_other_capex\":50000,\"construction_start_period\":1,\"construction_duration\":12,\"scurve_weights\":[{\"construction_year\":1,\"raw_weight\":0.4},{\"construction_year\":2,\"raw_weight\":0.6}]}'"
+          },
+          "response": []
+        },
+        {
+          "name": "sales",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"gdv\": 5000000,\r\n    \"sales_start_period\": 1,\r\n    \"sales_duration\": 24,\r\n    \"sales_cost_percentage\": 0.05\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/projects/{{project}}/inputs/sales",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}",
+                "inputs",
+                "sales"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PATCH \"{{url}}/projects/{{project}}/inputs/sales\" -H \"Accept: application/json\" -H \"Content-Type: application/json\" -d '{\"gdv\":5000000,\"sales_start_period\":1,\"sales_duration\":24,\"sales_cost_percentage\":0.05}'"
+          },
+          "response": []
+        },
+        {
+          "name": "operation",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"operation_start_period\": 13,\r\n    \"operation_duration\": 120,\r\n    \"nsa\": 10000,\r\n    \"rent_per_area\": 150,\r\n    \"occupancy_rate\": 0.9,\r\n    \"rental_growth_rate\": 0.03,\r\n    \"exit_cap_rate\": 0.06\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/projects/{{project}}/inputs/operation",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}",
+                "inputs",
+                "operation"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PATCH \"{{url}}/projects/{{project}}/inputs/operation\" -H \"Accept: application/json\" -H \"Content-Type: application/json\" -d '{\"operation_start_period\":13,\"operation_duration\":120,\"nsa\":10000,\"rent_per_area\":150,\"occupancy_rate\":0.9,\"rental_growth_rate\":0.03,\"exit_cap_rate\":0.06}'"
+          },
+          "response": []
+        },
+        {
+          "name": "opex",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"property_management_percentage\": 0.05,\r\n    \"insurance_percentage\": 0.01,\r\n    \"maintenance_rate\": 5000,\r\n    \"utilities_rate\": 3000,\r\n    \"fixed_marketing_cost\": 10000,\r\n    \"fixed_staffing_cost\": 20000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/projects/{{project}}/inputs/opex",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}",
+                "inputs",
+                "opex"
+              ]
+            },
+            "description": "Generated from cURL: curl -X PATCH \"{{url}}/projects/{{project}}/inputs/opex\" -H \"Accept: application/json\" -H \"Content-Type: application/json\" -d '{\"property_management_percentage\":0.05,\"insurance_percentage\":0.01,\"maintenance_rate\":5000,\"utilities_rate\":3000,\"fixed_marketing_cost\":10000,\"fixed_staffing_cost\":20000}'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cash Flow",
+      "item": [
+        {
+          "name": "latest",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/projects/{{project}}/cash-flow",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}",
+                "cash-flow"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET \"{{url}}/projects/{{project}}/cash-flow\" -H \"Accept: application/json\""
+          },
+          "response": []
+        },
+        {
+          "name": "history",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/projects/{{project}}/cash-flow/history",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}",
+                "cash-flow",
+                "history"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET \"{{url}}/projects/{{project}}/cash-flow/history\" -H \"Accept: application/json\""
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "disabled": false
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/projects/{{project}}/cash-flow/{{run}}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects",
+                "{{project}}",
+                "cash-flow",
+                "{{run}}"
+              ]
+            },
+            "description": "Generated from cURL: curl -X GET \"{{url}}/projects/{{project}}/cash-flow/{{run}}\" -H \"Accept: application/json\""
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "project",
+      "value": ""
+    }
+  ]
+}
