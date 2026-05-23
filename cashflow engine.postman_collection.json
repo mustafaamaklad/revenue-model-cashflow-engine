@@ -1,10 +1,9 @@
 {
   "info": {
-    "_postman_id": "701606c1-01f2-418c-adb0-320030c1292a",
+    "_postman_id": "2b40488a-b6dc-4074-b9d6-6f6ed7e9bd6e",
     "name": "cashflow engine",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "30809521",
-    "_collection_link": "https://go.postman.co/collection/30809521-701606c1-01f2-418c-adb0-320030c1292a?source=collection_link"
+    "_exporter_id": "30809521"
   },
   "item": [
     {
@@ -17,13 +16,11 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "body": {
@@ -55,8 +52,7 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "url": {
@@ -85,13 +81,11 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "body": {
@@ -130,18 +124,16 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"total_construction_cost\": 1000000,\r\n    \"total_other_capex\": 50000,\r\n    \"construction_start_period\": 1,\r\n    \"construction_duration\": 12,\r\n    \"scurve_weights\": [\r\n        {\r\n            \"construction_year\": 1,\r\n            \"raw_weight\": 0.4\r\n        },\r\n        {\r\n            \"construction_year\": 2,\r\n            \"raw_weight\": 0.6\r\n        }\r\n    ]\r\n}",
+              "raw": "{\r\n    \"total_construction_cost\": 1000000,\r\n    \"total_other_capex\": 50000,\r\n    \"construction_start_period\": 1,\r\n    \"construction_duration\": 2,\r\n    \"scurve_frequency\": \"quarterly\",\r\n    \"scurve_weights\": [\r\n        {\r\n            \"construction_year\": 1,\r\n            \"raw_weight\": 0.1\r\n        },\r\n        {\r\n            \"construction_year\": 2,\r\n            \"raw_weight\": 0.1\r\n        },\r\n        {\r\n            \"construction_year\": 3,\r\n            \"raw_weight\": 0.1\r\n        },\r\n        {\r\n            \"construction_year\": 4,\r\n            \"raw_weight\": 0.1\r\n        },\r\n        {\r\n            \"construction_year\": 5,\r\n            \"raw_weight\": 0.2\r\n        },\r\n        {\r\n            \"construction_year\": 6,\r\n            \"raw_weight\": 0.2\r\n        },\r\n        {\r\n            \"construction_year\": 7,\r\n            \"raw_weight\": 0.1\r\n        },\r\n        {\r\n            \"construction_year\": 8,\r\n            \"raw_weight\": 0.1\r\n        }\r\n        \r\n    ]\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -171,13 +163,11 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "body": {
@@ -212,13 +202,11 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "body": {
@@ -253,13 +241,11 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "body": {
@@ -299,8 +285,7 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "url": {
@@ -325,8 +310,7 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "url": {
@@ -352,8 +336,7 @@
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json",
-                "disabled": false
+                "value": "application/json"
               }
             ],
             "url": {
@@ -378,6 +361,10 @@
   "variable": [
     {
       "key": "project",
+      "value": ""
+    },
+    {
+      "key": "url",
       "value": ""
     }
   ]
